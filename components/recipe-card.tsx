@@ -32,7 +32,7 @@ export function RecipeCard({ recipe, userIngredients }: RecipeCardProps) {
 
   return (
     <>
-      <Card className="overflow-hidden border border-gray-200 dark:border-gray-800">
+      <Card className="flex flex-col h-full overflow-hidden border border-gray-200 dark:border-gray-800">
         <div className="relative h-48 w-full">
           <Image
             src={recipe.image || "/placeholder.svg?height=192&width=384"}
@@ -83,7 +83,7 @@ export function RecipeCard({ recipe, userIngredients }: RecipeCardProps) {
             </div>
           )}
         </CardContent>
-        <CardFooter>
+        <CardFooter className="pt-2 mt-auto">
           <Button
             variant="outline"
             className="w-full border-black dark:border-white"

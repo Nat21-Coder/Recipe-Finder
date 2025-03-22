@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { useToast } from "@/components/ui/use-toast"
+import { useToast } from "@/hooks/use-toast";
 import { RecipeCard } from "@/components/recipe-card"
 
 export function RecipeFinder() {
@@ -19,7 +19,7 @@ export function RecipeFinder() {
   const [ingredients, setIngredients] = useState<string[]>([])
   const [recipes, setRecipes] = useState<Recipe[]>([])
   const [isSearching, setIsSearching] = useState(false)
-  const { toast } = useToast()
+  const { toast } = useToast();
 
   const addIngredient = () => {
     const trimmedIngredient = currentIngredient.trim().toLowerCase()
@@ -30,7 +30,6 @@ export function RecipeFinder() {
       toast({
         title: "Ingredient already added",
         description: "You've already added this ingredient to your list.",
-        variant: "destructive",
       })
       return
     }
@@ -39,7 +38,6 @@ export function RecipeFinder() {
       toast({
         title: "Maximum ingredients reached",
         description: "You can only search with up to 5 ingredients at a time.",
-        variant: "destructive",
       })
       return
     }
@@ -64,7 +62,6 @@ export function RecipeFinder() {
       toast({
         title: "No ingredients added",
         description: "Please add at least one ingredient to search for recipes.",
-        variant: "destructive",
       })
       return
     }
@@ -84,7 +81,6 @@ export function RecipeFinder() {
       toast({
         title: "Error searching recipes",
         description: "An error occurred while searching for recipes. Please try again.",
-        variant: "destructive",
       })
     } finally {
       setIsSearching(false)
