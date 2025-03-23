@@ -5,7 +5,7 @@ import type { Recipe } from "@/types/recipe"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import Image from "next/image"
-import { Badge } from "./ui/badge"
+import { Badge } from "@/components/ui/badge"
 
 interface RecipeDetailModalProps {
   recipe: Recipe | null
